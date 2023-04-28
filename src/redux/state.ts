@@ -1,4 +1,4 @@
-import { combineReducers, createStore } from "redux";
+import { combineReducers, legacy_createStore as createStore } from "redux";
 import { currencyReducer } from './currencyReducer';
 
 const reducers = combineReducers({
