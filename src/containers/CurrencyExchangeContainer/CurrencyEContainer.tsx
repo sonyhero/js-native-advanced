@@ -104,7 +104,6 @@ const mapDispatchToProps = (dispatch: Dispatch<CurrencyReducersTypes>) : MapDisp
     };
 };
 
-
 const connector = connect(mapStateToProps, mapDispatchToProps);
 
 // type TProps = ConnectedProps<typeof connector>;
