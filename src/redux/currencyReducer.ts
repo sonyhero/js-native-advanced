@@ -41,9 +41,9 @@ const initialState: CurrencyState = {
 export const currencyReducer = (state: CurrencyState = initialState, action: CurrencyReducersTypes): CurrencyState => {
     switch (action.type) {
         case ACTIONS_TYPE.CHANGE_CHANGE_ACTION:
-            return {...state, isBuying: action.isBuying}
+            return {...state, isBuying: action.isBuying, amountOfBYN: '', amountOfCurrency:''}
         case ACTIONS_TYPE.CHANGE_CURRENT_CURRENCY:
-            return {...state, currentCurrency: action.currentCurrency}
+            return {...state, currentCurrency: action.currentCurrency, amountOfBYN: '', amountOfCurrency:''}
         case ACTIONS_TYPE.CHANGE_CURRENCY_FIELD_TYPE:
             return {...state, amountOfBYN: action.amountOfBYN, amountOfCurrency: action.amountOfCurrency}
         default:
