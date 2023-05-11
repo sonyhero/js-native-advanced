@@ -24,17 +24,35 @@ console.log('lesson 2');
 // Task 01
 // Реализовать функцию sum которая суммирует 2 числа следующим образом sum(3)(6) === 9
 
+// const sum = (x: number) => {
+//     return (y: number) => {
+//         return y+x
+//   }
+//
+// }
+// console.log(sum(3)(6))
+
+
 // Task 02
 // Реализовать функцию makeCounter которая работает следующим образом:
+
+// const makeCounter = () => {
+//     let x = 0
+//     return () => {
+//         return ++x
+//     }
+// }
 // const counter = makeCounter();
-// counter(); // 1
-// counter(); // 2
 // const counter2 = makeCounter();
-// counter2(); // 1
-// counter(); // 3
+// console.log(counter()); // 1
+// console.log(counter()); // 2
+// console.log(counter2()); // 1
+// console.log(counter()); // 3
+
 
 // Task 03
 // Переписать функцию из Task 02 так, что бы она принимала число в качестве аргумента и это число было стартовым значением счетчика
+
 // и возвращала следующий объект методов:
 // increase: +1
 // decrease: -1
