@@ -12,7 +12,7 @@ type CurrencyExchangePropsType = {
     changeCurrentCurrency: (e: React.MouseEvent<HTMLLIElement>) => void;
 };
 
-const CurrencyExchange: React.FC<CurrencyExchangePropsType> = (props) => {
+export const CurrencyExchange: React.FC<CurrencyExchangePropsType> = (props) => {
     const {
         currenciesName,
         currentCurrency,
@@ -24,29 +24,31 @@ const CurrencyExchange: React.FC<CurrencyExchangePropsType> = (props) => {
         changeAction,
         changeCurrentCurrency,
     } = props
-    const viewCurrency = isBuying ? (
-        <React.Fragment>
-            <label>
-                You give the next amount of BYN:
-                <input value={amountOfBYN} data-currency="byn" onChange={changeCurrencyField}/>
-            </label>
-            <label>
-                You get the next amount of {currentCurrency}:
-                <input value={amountOfCurrency} data-currency="currency" onChange={changeCurrencyField}/>
-            </label>
-        </React.Fragment>
-    ) : (
-        <React.Fragment>
-            <label>
-                You give the next amount of {currentCurrency}:
-                <input value={amountOfCurrency} data-currency="currency" onChange={changeCurrencyField}/>
-            </label>
-            <label>
-                You get the next amount of BYN:
-                <input value={amountOfBYN} data-currency="byn" onChange={changeCurrencyField}/>
-            </label>
-        </React.Fragment>
-    );
+    const viewCurrency = isBuying
+        ? (
+            <>
+                <label>
+                    You give the next amount of BYN:
+                    <input value={amountOfBYN} data-currency="byn" onChange={changeCurrencyField}/>
+                </label>
+                <label>
+                    You get the next amount of {currentCurrency}:
+                    <input value={amountOfCurrency} data-currency="currency" onChange={changeCurrencyField}/>
+                </label>
+            </>
+        )
+        : (
+            <>
+                <label>
+                    You give the next amount of {currentCurrency}:
+                    <input value={amountOfCurrency} data-currency="currency" onChange={changeCurrencyField}/>
+                </label>
+                <label>
+                    You get the next amount of BYN:
+                    <input value={amountOfBYN} data-currency="byn" onChange={changeCurrencyField}/>
+                </label>
+            </>
+        )
 
     return (
         <div className="currency">
@@ -81,7 +83,5 @@ const CurrencyExchange: React.FC<CurrencyExchangePropsType> = (props) => {
                 {viewCurrency}
             </div>
         </div>
-    );
-};
-
-export default CurrencyExchange;
+    )
+}

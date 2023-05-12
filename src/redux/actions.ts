@@ -9,40 +9,40 @@ export type ChangeCurrencyFieldType = {
     type: ACTIONS_TYPE.CHANGE_CURRENCY_FIELD_TYPE
     amountOfBYN: string
     amountOfCurrency: string
-};
+}
 
 
-export const ChangeCurrencyField = (amountOfBYN: string, amountOfCurrency: string): ChangeCurrencyFieldType => {
+export const setCurrencyAmount = (amountOfBYN: string, amountOfCurrency: string): ChangeCurrencyFieldType => {
     return {
         type: ACTIONS_TYPE.CHANGE_CURRENCY_FIELD_TYPE,
         amountOfBYN,
         amountOfCurrency
     }
-};
+}
 
 export type ChangeAction = {
     type: ACTIONS_TYPE.CHANGE_CHANGE_ACTION
     isBuying: boolean
-};
+}
 
 
-export const ChangeAction = (isBuying: boolean): ChangeAction => {
+export const setAction = (isBuying: boolean): ChangeAction => {
     return {
         type: ACTIONS_TYPE.CHANGE_CHANGE_ACTION,
         isBuying
     }
-};
+}
 
 export type ChangeCurrentCurrencyType = {
     type: ACTIONS_TYPE.CHANGE_CURRENT_CURRENCY
     currentCurrency: string
-};
+}
 
-export const ChangeCurrentCurrency = (currentCurrency: string): ChangeCurrentCurrencyType => {
+export const changeCurrency = (currentCurrency: string): ChangeCurrentCurrencyType => {
     return {
         type: ACTIONS_TYPE.CHANGE_CURRENT_CURRENCY,
         currentCurrency
     }
-};
+}
 
 export type CurrencyReducersTypes = ChangeCurrencyFieldType | ChangeAction | ChangeCurrentCurrencyType;
