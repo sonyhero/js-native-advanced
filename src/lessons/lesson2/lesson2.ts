@@ -53,6 +53,38 @@ console.log('lesson 2');
 // Task 03
 // Переписать функцию из Task 02 так, что бы она принимала число в качестве аргумента и это число было стартовым значением счетчика
 
+const makeCounter = (n:number) => {
+    let x = n
+    return {
+        increase() {
+            return ++x
+        },
+        decrease() {
+            return --x
+        },
+        reset() {
+            return 0
+        },
+        set(n:number) {
+            return x=n
+        }
+    }
+}
+const increase = makeCounter(0).increase
+const decrease = makeCounter(0).decrease
+const reset = makeCounter(5).reset
+const set = makeCounter(3).set
+
+console.log(increase())
+console.log(increase())
+console.log(increase())
+console.log(decrease())
+console.log(decrease())
+console.log(decrease())
+console.log(reset())
+console.log(set(2))
+
+
 // и возвращала следующий объект методов:
 // increase: +1
 // decrease: -1
