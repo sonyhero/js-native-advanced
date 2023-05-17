@@ -74,8 +74,54 @@ console.log('lesson 2');
 // Task 05
 // решить все задачи по рекурсии которые даны в конце статьи https://learn.javascript.ru/recursion
 
+// Вычислить сумму чисел до данного
+// Рекурсия
+// const sumTo = (n: number): number => {
+//     if( n < 1) {
+//         return 0
+//     }
+//     return n+(sumTo(n-1))
+// }
+// console.log(sumTo(3))
+//Можно ли при помощи рекурсии посчитать sumTo(100000) - нет!
+
+// Цикл
+// const sumTo = (n: number): number => {
+//     let sum = 0
+//     for (let i = 0; i <= n; i++) {
+//         sum+=i
+//     }
+//     return sum
+// }
+// console.log(sumTo(1000000))
+//Можно ли при помощи цикла посчитать sumTo(100000) - да!
+
+// Прогрессия
+// const sumTo = (n: number): number => {
+//     let sum
+//     if( n < 1) {
+//         return 0
+//     }else {
+//         sum = (2 + (n-1))/2*n
+//     }
+//     return sum
+// }
+// console.log(sumTo(1000000))
+//Можно ли при помощи прогрессии посчитать sumTo(100000) - да!
+
+// Вычислить факториал
+// const factorial = (n: number): number => {
+//     if (n) {
+//         return n * factorial(n - 1)
+//     } else
+//         return 1
+// }
+//
+// console.log(factorial(6))
+
 // Task 06
 // написать функцию, которая повторяет функционал метода flat массива на всю глубину.
 
 // just a plug
-export default () => {};
+export default () => {
+};
