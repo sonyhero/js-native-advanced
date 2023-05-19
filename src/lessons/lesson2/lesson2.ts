@@ -154,6 +154,13 @@ console.log('lesson 2');
 // Task 06
 // написать функцию, которая повторяет функционал метода flat массива на всю глубину.
 
+    const flatted = (arr: any[], d: number = 1): any[] => {
+    return d > 0 ? arr.reduce((acc, val) => acc.concat(Array.isArray(val) ? flatted(val, d - 1) : val), [])
+        : arr.slice();
+};
+
+console.log(flatted([1, 2, [3, 4, [5, 6]]], Infinity))
+
 // just a plug
 export default () => {
 };
