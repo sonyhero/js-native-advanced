@@ -1,3 +1,5 @@
+import axios from 'axios';
+
 console.log('lesson 3');
 
 // Event loop
@@ -17,4 +19,31 @@ console.log('lesson 3');
 
 
 // just a plug
-export default ()=>{};
+const instance = axios.create({
+    baseURL: 'https://jsonplaceholder.typicode.com/',
+    headers: {
+        'Content-type': 'application/json; charset=UTF-8'
+    }
+})
+
+export const JsonPlaceHolder = {
+    getPosts() {
+        return instance.get(`posts`)
+            .then(res =>res.data)
+    },
+    addPosts(body: BodyType) {
+        return instance.post(`posts`, body)
+    },
+    deletePost(postId: number) {
+        return instance.delete(`posts/${postId}`)
+    },
+    updatePost(title: string, postId: number) {
+        return instance.put(`posts/${postId}`,{title})
+    }
+}
+
+export type BodyType = {
+    title: string
+    body: string
+    userId: number
+}
